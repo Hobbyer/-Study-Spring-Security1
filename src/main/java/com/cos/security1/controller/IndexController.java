@@ -27,13 +27,13 @@ public class IndexController {
   }
 
   @GetMapping("/login")
-  public String login() {
-    return "login";
+  public String loginForm() {
+    return "loginForm";
   }
 
   @GetMapping("/join")
-  public String join() {
-    return "join";
+  public String joinForm() {
+    return "joinForm";
   }
 
   @GetMapping("/joinProc")
