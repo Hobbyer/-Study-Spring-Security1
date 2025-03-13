@@ -28,13 +28,18 @@ public class IndexController {
   }
 
   @GetMapping("/admin")
-  public String admin() {
+  public @ResponseBody String admin() {
     return "admin";
   }
 
   @GetMapping("/manager")
-  public String manager() {
+  public @ResponseBody String manager() {
     return "manager";
+  }
+
+  @GetMapping("/user")
+  public @ResponseBody String user() {
+    return "user";
   }
 
   @GetMapping("/loginForm")
@@ -57,6 +62,11 @@ public class IndexController {
     userRepository.save(user); // 회원가입 잘됨. 비밀번호 : 1234 => 시큐리티로 로그인을 할 수 없음. 이유는 패스워드가 암호화가 안되었기 때문!!
 
     return "redirect:/loginForm";
+  }
+
+  @GetMapping("/info")
+  public @ResponseBody String info() {
+    return "개인정보";
   }
 
   @GetMapping("/joinProc")

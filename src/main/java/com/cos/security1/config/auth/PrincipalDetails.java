@@ -9,13 +9,13 @@ package com.cos.security1.config.auth;
 // Security Session => Authentication => UserDetails
 
 import com.cos.security1.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+// import java.util.List;
 
 public class PrincipalDetails implements UserDetails {
 
