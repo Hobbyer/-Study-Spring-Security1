@@ -20,3 +20,17 @@ spring:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+
+  # OAuth2 설정
+  # security.oauth2.client.registration 을 사용하면
+  # spring.security.oauth2.client.registration 을 사용하지 않아도 된다.
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 12345678901234567890123456789012.apps.googleusercontent.com
+            client-secret: 12345678901234567890123456789012
+            scope:
+              - email
+              - profile
