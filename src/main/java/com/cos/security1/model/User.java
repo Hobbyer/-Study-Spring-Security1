@@ -19,6 +19,10 @@ public class User {
   private String password;
   private String email;
   private String role; // ROLE_USER, ROLE_ADMIN
+
+  private String provider; // google(제공자)
+  private String providerId; // 제공자로부터 받은 id
+
   @CreationTimestamp
   private Timestamp createDate;
 }
