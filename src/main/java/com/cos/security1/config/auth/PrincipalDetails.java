@@ -25,10 +25,18 @@ import java.util.Map;
 @Data
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
-  private final User user; // 콤포지션
+  private final User user; // 컴포지션
+  private Map<String, Object> attributes; // OAuth 제공자로부터 받은 회원정보
 
+  // 일반 로그인할 때 사용하는 생성자
   public PrincipalDetails(User user) {
     this.user = user;
+  }
+
+  // OAuth 로그인할 때 사용하는 생성자
+  public PrincipalDetails(User user, Map<String, Object> attributes) {
+    this.user = user;
+    this.attributes = attributes;
   }
 
   // 해당 User의 권한을 리턴하는 곳!!
@@ -80,13 +88,11 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
   @Override
   public Map<String, Object> getAttributes() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getAttributes'");
+    return attributes;
   }
 
   @Override
   public String getName() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'getName'");
+    return null;
   }
 }

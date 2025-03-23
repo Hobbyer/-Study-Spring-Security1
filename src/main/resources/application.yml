@@ -29,8 +29,8 @@ spring:
       client:
         registration:
           google:
-            client-id: # 구글 클라이언트 ID
-            client-secret: # 구글 클라이언트 시크릿
+            client-id: 984612371222-508n0u00ms79dbm7idl39eddof0fep28.apps.googleusercontent.com
+            client-secret: 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
             scope:
               - email
               - profile

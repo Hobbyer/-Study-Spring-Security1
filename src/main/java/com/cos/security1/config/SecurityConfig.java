@@ -49,12 +49,14 @@ public class SecurityConfig {
             .anyRequest().permitAll() // 그리고 나머지 url은 전부 권한을 허용해준다.
         );
 
+    // formLogin 사용하겠다는 뜻
     http.formLogin(form -> form
         .loginPage("/loginForm")
         .loginProcessingUrl("/login") // /login 주소가 호출이 되면 시큐리티가 낚아채서 대신 로그인을 진행해준다.
         .defaultSuccessUrl("/")
     );
 
+    // oauth2Login 사용하겠다는 뜻
     http.oauth2Login(oauth2 -> oauth2 // oauth2 로그인을 사용하겠다는 뜻
         .loginPage("/loginForm") // 구글 로그인이 완료된 뒤의 후처리가 필요함. Tip. 코드X, (엑세스토큰+사용자프로필정보 O)
         .userInfoEndpoint(userInfo -> userInfo // oauth2 로그인 성공 이후 사용자 정보를 가져올 때의 설정들
